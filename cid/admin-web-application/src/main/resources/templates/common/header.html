@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NHS Digital</title>
+<!-- Bootstrap -->
+<link type="text/css" th:href="@{/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+<link type="text/css" th:href="@{/css/beta.min.css}" rel="stylesheet"
+	media="screen" />
+<link type="text/css" th:href="@{/css/styles.css}" rel="stylesheet"
+	media="screen" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<nav th:fragment="menu" class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"><img
+				th:src="@{/images/nhs-logotype-blue.svg}" width="70" height="30" /></a>
+		</div>
+	</div>
+</nav>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/fragments::header"></head>
+<body>
+
+	<div th:replace="common/fragments::menu"></div>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div class="container" th:object="${user}">
+		<h2 th:text="*{username}"></h2>
+		<table class="table">
+			<tr>
+				<td style="font-weight: bold">Patient's Name</td>
+				<td th:text="*{username}" />
+			</tr>
+			<tr>
+				<td style="font-weight: bold">Patient's NHS Number</td>
+				<td th:text="*{nhsNumber}" />
+			</tr>
+			<tr>
+				<td style="font-weight: bold">Patient's Email</td>
+				<td th:text="*{email}" />
+			</tr>
+		</table>
+		<button class="btn btn-primary" onclick="history.back()">back</button>
+		<!-- <a th:href="@{delete/{id}(id=${userId})}" class="btn btn-primary">delete</a>		
+		<a th:href="@{edit/{id}(id=${userId})}" class="btn btn-primary">edit</a> -->
+	</div>
+	<br></br>
+	<div class="container" th:replace="common/footer :: common-footer"></div>
+
+</body>
+</html>

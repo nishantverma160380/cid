@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/fragments::header"></head>
+<body>
+	<div th:replace="common/fragments::menu"></div>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div class="container" th:object="${user}">
+		<h2>Profile</h2>
+		<table>
+			<tr>
+				<td>
+					<table class="table">
+						<tr align="center">
+							<td><img th:src="@{/images/user.png}" alt="*{username}"
+								style="width: 220px; height: 250px;" /></td>
+						</tr>
+						<tr align="center">
+							<td>
+								<h2 th:text="*{username}"></h2>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td><table class="table">
+						<tr>
+							<td style="font-weight: bold">Patient's Name</td>
+							<td th:text="*{username}" />
+						</tr>
+						<tr>
+							<td style="font-weight: bold">Patient's NHS Number</td>
+							<td th:text="*{nhsNumber}" />
+						</tr>
+						<tr>
+							<td style="font-weight: bold">Patient's Email</td>
+							<td th:text="*{email}" />
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+		<th:block
+			th:switch="${#lists.contains(#httpServletRequest.userPrincipal.keycloakSecurityContext.token.realmAccess.roles,'admin')}">
+			<form action="#" th:action="@{/user/}" method="get">
+				<div>
+					<input class="btn btn-primary" type="submit" value="Close" />
+				</div>
+			</form>
+		</th:block>
+	</div>
+	<br></br>
+	<div class="container" th:replace="common/footer :: common-footer"></div>
+</body>
+</html>

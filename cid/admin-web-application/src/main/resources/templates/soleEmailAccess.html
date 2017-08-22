@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/fragments::header"></head>
+<body>
+	<div th:replace="common/fragments::menu"></div>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<form action="#" th:action="@{create}" th:object="${invite}"
+		method="post">
+		<div class="container">
+			<h3>Invite system</h3>
+			<br></br>
+			<h2>Does the patient have sole access to their email?</h2>
+			<br></br>
+			<div>
+				<input class="radio-button" type="radio" th:field="*{accept}"
+					value="true" /> <label th:text="Yes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input class="radio-button" type="radio" th:field="*{accept}"
+					value="false" /> <label th:text="No">No</label>
+			</div>
+			<br></br> <br></br>
+			<div>
+				<button class="btn btn-primary" type="button" onclick="history.back()">back</button>
+				<input class="btn btn-primary" type="submit" value="Continue" />
+			</div>
+		</div>
+	</form>
+	<br></br>
+	<div class="container" th:replace="common/footer :: common-footer"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/fragments::header"></head>
+<body>
+	<div th:replace="common/fragments::menu"></div>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div class="container">
+		<h2>Users</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td><a th:href="@{serviceInvite}">Create User</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<form th:action="@{/users}" method="get">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search..."
+					id="q" name="q" /> <span class="input-group-btn">
+					<button class="btn btn-default" type="submit">Go</button>
+				</span>
+			</div>
+		</form>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>UserName</th>
+					<th>Email</th>
+					<th>NHS Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="c : ${userlist}">
+					<td><a th:text="${c.username}"
+						th:href="@{{id}(id=${c.userId})}"></a></td>
+					<td th:text="${c.email}"></td>
+					<td th:text="${c.nhsNumber}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br></br>
+	<div class="container" th:replace="common/footer :: common-footer"></div>
+</body>
+</html>

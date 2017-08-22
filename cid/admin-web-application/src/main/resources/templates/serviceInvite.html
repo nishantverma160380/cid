@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/fragments::header"></head>
+<body>
+	<div th:replace="common/fragments::menu"></div>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<form action="#" th:action="@{soleEmailAccess}" th:object="${invite}"
+		method="post">
+		<div class="container">
+			<div>
+				<h3>Invite system</h3>
+				<br></br>
+				<h2>
+					<b> Is the patient capable of using this service?</b>
+				</h2>
+				<br></br>
+				<p>This includes being:</p>
+				<ul>
+					<li>willing to manage their own health online</li>
+					<li>of sound mind to be able to do that</li>
+				</ul>
+				<br></br>
+			</div>
+			<div>
+				<input class="radio-button" type="radio" th:field="*{accept}"
+					value="true" /> <label th:text="Yes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input class="radio-button" type="radio" th:field="*{accept}"
+					value="false" /> <label th:text="No">No</label>
+			</div>
+			<br></br> <br></br>
+			<div>
+				<button class="btn btn-primary" type="button" onclick="history.back()">back</button>
+				<input class="btn btn-primary" type="submit" value="Continue" />
+			</div>
+		</div>
+	</form>
+	<br></br>
+	<div class="container" th:replace="common/footer :: common-footer"></div>
+</body>
+</html>

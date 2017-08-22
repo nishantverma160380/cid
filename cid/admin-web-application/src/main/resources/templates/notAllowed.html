@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/fragments::header"></head>
+<body>
+	<div th:replace="common/fragments::menu"></div>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div class="container">
+		<div>
+			<h3>Invite system</h3>
+			<br></br>
+			<h2>
+				<b> Patient has been denied access</b>
+			</h2>
+			<p>Patient must have sole access to their email and be:</p>
+			<ul>
+				<li>of sound mind to view their medical record</li>
+				<li>clinically authorised to view their medical record</li>
+				<li>willing to manage their own health online</li>
+			</ul>
+		</div>
+		<br></br>
+		<form action="#" th:action="@{/user/}" method="get">
+			<div>
+				<input class="btn btn-primary" type="submit" value="Close" />
+			</div>
+		</form>
+
+	</div>
+		<br></br>
+	<div class="container" th:replace="common/footer :: common-footer"></div>
+</body>
+</html>
